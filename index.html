@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StudyBuddy – Academic Companion</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Login Section (shown if not logged in) -->
+  <div id="login-section" class="centered-container">
+    <h2>Welcome to StudyBuddy</h2>
+    <form id="login-form">
+      <label for="login-name">Name:</label>
+      <input type="text" id="login-name" required>
+      <label for="login-email">Email:</label>
+      <input type="email" id="login-email" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+  
+  <!-- Main App Section (shown after login) -->
+  <div id="app-section" class="hidden">
+    <header>
+      <div class="header-container">
+        <img src="logo.svg" alt="StudyBuddy Logo" id="logo">
+        <h1>StudyBuddy</h1>
+      </div>
+      <button id="logout-button">Logout</button>
+      <nav>
+        <ul>
+          <li><a href="#" data-section="dashboard" class="nav-link active">Dashboard</a></li>
+          <li><a href="#" data-section="assignments" class="nav-link">Assignments</a></li>
+          <li><a href="#" data-section="collaboration" class="nav-link">Collaboration</a></li>
+          <li><a href="#" data-section="profile" class="nav-link">Profile</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Dashboard Section -->
+      <section id="dashboard" class="content-section active">
+        <h2>Dashboard</h2>
+        <p>Welcome, <span id="user-name-display"></span>! Here’s an overview:</p>
+        <div class="stats">
+          <div class="stat-box">
+            <h3>Assignments Due</h3>
+            <p id="assignments-count">0</p>
+          </div>
+          <div class="stat-box">
+            <h3>Chat Messages</h3>
+            <p id="chat-count">0</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Assignments Section -->
+      <section id="assignments" class="content-section">
+        <h2>Assignments</h2>
+        <ul id="assignment-list" class="assignment-list">
+          <!-- Assignment items will be injected here -->
+        </ul>
+        <form id="assignment-form">
+          <input type="text" id="assignment-title" placeholder="Assignment title" required>
+          <input type="date" id="assignment-due" required>
+          <button type="submit">Add Assignment</button>
+        </form>
+      </section>
+      
+      <!-- Collaboration Section -->
+      <section id="collaboration" class="content-section">
+        <h2>Collaboration</h2>
+        <div id="chat-box" class="chat-box">
+          <!-- Chat messages will appear here -->
+        </div>
+        <form id="chat-form">
+          <input type="text" id="chat-input" placeholder="Type a message..." required>
+          <button type="submit">Send</button>
+        </form>
+      </section>
+      
+      <!-- Profile Section -->
+      <section id="profile" class="content-section">
+        <h2>Profile</h2>
+        <form id="profile-form">
+          <label for="profile-name">Name:</label>
+          <input type="text" id="profile-name" required>
+          <button type="submit">Update Profile</button>
+        </form>
+      </section>
+    </main>
+    
+    <footer>
+      <p>StudyBuddy App Demo &copy; 2025</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
